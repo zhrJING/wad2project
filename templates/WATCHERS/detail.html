@@ -1,0 +1,112 @@
+{% extends 'WATCHERS/base.html' %}
+
+{% load staticfiles %} 
+{% block title %}
+    <title>Detail</title>
+{% endblock %}
+
+{% block body_block %}
+
+<!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form enctype="multipart/form-data" action="." method="post">{% csrf_token %}
+
+{{ form.as_p }}
+<input type="submit" value="Submit" />
+</form> -->
+
+<div class="container detail" style="margin-top: 25px;">
+
+<div class="row">
+	<div class="col-7">
+		<div class="video-box">
+			<img src="{% static 'images/tech.jpg' %}" width="100%" />
+		</div>
+		<div class="info row">
+			<div class="col-4">
+				1000 Comments
+			</div>
+			<div class="col-8 tr">
+				<span class="num">1k</span>
+				<span class="num">18</span>
+			</div>
+		</div>
+		<ul class="visitors">
+			<li>
+				<div class="head">
+					<img src="{% static 'images/head.jpg' %}"/>
+				</div>
+				<div class="cont">
+					<p>
+						It's very nice~
+					</p>
+					<span class="time">5 mins ago</span>
+				</div>
+			</li>
+			<li>
+				<div class="head">
+					<img src="{% static 'images/head.jpg' %}"/>
+				</div>
+				<div class="cont">
+					<p>
+						It's very nice~
+					</p>
+					<span class="time">5 mins ago</span>
+				</div>
+			</li>
+			<li>
+				<div class="head">
+					<img src="{% static 'images/head.jpg' %}"/>
+				</div>
+				<div class="cont">
+					<p>
+						It's very nice~
+					</p>
+					<span class="time">5 mins ago</span>
+				</div>
+			</li>
+			<li>
+				<div class="head">
+					<img src="{% static 'images/head.jpg' %}"/>
+				</div>
+				<div class="cont">
+					<p>
+						It's very nice~
+					</p>
+					<span class="time">5 mins ago</span>
+				</div>
+			</li>
+			<li>
+				<div class="head">
+					<img src="{% static 'images/head.jpg' %}"/>
+				</div>
+				<div class="cont">
+					<p>
+						It's very nice~
+					</p>
+					<span class="time">5 mins ago</span>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="col-4">
+		
+		<ul class="v-list">
+			<li>
+				<img src="{% static 'images/tech.jpg' %}" width="100%" />
+			</li>
+			<li>
+				<img src="{% static 'images/tech.jpg' %}" width="100%" />
+			</li>
+			<li>
+				<img src="{% static 'images/tech.jpg' %}" width="100%" />
+			</li>
+			<li>
+				<img src="{% static 'images/tech.jpg' %}" width="100%" />
+			</li>
+		</ul>
+	</div>
+</div>
+	
+</div>
+{% endblock %}

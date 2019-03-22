@@ -1,0 +1,29 @@
+{% extends 'WATCHERS/base.html' %}
+
+
+{% load staticfiles %} 
+{% block title %}<title>Profile</title>{% endblock %}
+
+{% block body_block %}
+
+    {% if user.is_authenticated %}
+        <p><strong> Welcome Back {{ user.username }}</strong></p>
+    {% else %}
+        <p><strong>Login Or Register For An Account.</strong></p>
+
+    {% endif %}
+
+    
+    <!-- UserName, Email, Picture -->
+    <div> 
+        <h1>Profile</h1>
+        <h3>UserName:</h3> <h5>{{ user.username }}</h5>
+        <h3>Email:</h3><h5> {{ user.email }}</h5>
+            <h3>Last Time You Were Here:</h3><h5> {{ user.last_login }}</h5><br>
+        <div>
+        <img scr="{{MEDIA_URL}}{{ userprofile.picture.url }}" width = "240">
+</div>
+    </div>
+
+
+{% endblock %}

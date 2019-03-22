@@ -1,0 +1,55 @@
+{% extends 'WATCHERS/base.html' %}
+{% load staticfiles %} 
+
+{% block title %}
+    <title>About WATCHERS</title>
+{% endblock %}
+
+{% block body_block %}
+
+<div class="row" style="padding-bottom: 50px;">
+  <div class="video-list col-12" >
+    <h2>Latest</h2>
+    <div class="card-group">
+    <div class="card">
+            <!-- this line allows the entire card to become a link -->
+      <a href="/WATCHERS/category/science" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></a>
+      <img class="card-img-top" style="max-height:56%;max-width:100%;" src="{% static 'images/tech.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Science</h5>
+        <p class="card-text">Science and Technology podcasts !!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+            <!-- this line allows the entire card to become a link -->
+      <a href="/WATCHERS/category/drama" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></a>
+      <img class="card-img-top" style="max-height:100%;max-width:100%;" src="{% static 'images/dramas.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Drama</h5>
+        <p class="card-text">Everyone needs drama in their life !!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+            <!-- this line allows the entire card to become a link -->
+      <a href="/WATCHERS/category/sport" style="position: absolute; top: 0; right: 0; height: 100%; width: 100%;"></a>
+      <img class="card-img-top"  style="max-height:100%;max-width:100%;" src="{% static 'images/sport.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Sports</h5>
+        <p class="card-text">Podcasts form the world of sports !!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+
+{% endblock %}

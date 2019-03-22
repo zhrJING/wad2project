@@ -1,0 +1,21 @@
+{% extends 'WATCHERS/base.html' %}
+{% block title %}
+    <title>Contact Us</title>
+{% endblock %}
+
+{% block body_block %}
+    
+    <div class="col-sm-12">
+        <h1>Contact Us</h1>
+        
+        <form method="post" class="form" style="padding-bottom: 100px">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button type="submit" style="margin-left: 100px">Send</button>
+            </div>
+        </form>
+        
+    </div>
+
+{% endblock %}

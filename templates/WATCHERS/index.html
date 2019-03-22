@@ -1,0 +1,108 @@
+
+{% extends 'WATCHERS/base.html' %}
+
+{% load staticfiles %} 
+{% block title %}
+    <title>Index</title>
+{% endblock %}
+
+{% block body_block %}
+      <div>
+         <div class="card-group">
+
+
+
+
+{% if user.is_authenticated %}
+   <p><strong> Welcome Back {{ user.username }}</strong></p>
+{% else %}
+   <!--  <p><strong>Login Or Register For An Account.</strong></p> -->
+
+{% endif %}
+<h1>Your personal video Library</h1>
+<div class="row" style="padding-bottom: 50px;">
+  <div class="video-list col-6" >
+    <h2>Recommended</h2>
+    <div class="card-group">
+    <div class="card">
+            <!-- this line allows the entire card to become a link -->
+      <a href="{% url 'detail' %}" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></a>
+      <img class="card-img-top" style="max-height:56%;max-width:100%;" src="{% static 'images/tech.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Science</h5>
+        <p class="card-text">Science and Technology podcasts !!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+            <!-- this line allows the entire card to become a link -->
+      <a href="{% url 'detail' %}" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></a>
+      <img class="card-img-top" style="max-height:100%;max-width:100%;" src="{% static 'images/dramas.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Drama</h5>
+        <p class="card-text">Everyone needs drama in their life !!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+            <!-- this line allows the entire card to become a link -->
+      <a href="{% url 'detail' %}" style="position: absolute; top: 0; right: 0; height: 100%; width: 100%;"></a>
+      <img class="card-img-top"  style="max-height:100%;max-width:100%;" src="{% static 'images/sport.jpg' %}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Sports</h5>
+        <p class="card-text">Podcasts form the world of sports !!</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="latest-list col-4" style="margin-left: 10%">
+    <h2>Latest Views</h2>
+    <ul style="padding-top: 20px">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+      <li><a href="#">Link 5</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+<br>
+
+<div class="card-group">
+    {% if top3PodcastsDict %}
+        {% for podcast in top3PodcastsDict %}
+      <div class="card">
+              <!-- this line allows the entire card to become a link -->
+        <a href="/WATCHERS/category/{{category.slug}}/{{podcast.slug}}" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;"></a>
+        <img class="card-img-top" style="max-height:56%;max-width:100%;" src="{{podcast.image.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{ podcast.title }}</h5>
+          <p class="card-text"></p>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted"></small>
+        </div>
+      </div>
+        {% endfor %}
+        {% else %}
+            <!-- No categories present. -->
+        {% endif %}
+
+  </div>
+</div>
+             
+
+
+
+{% endblock %}
+
+

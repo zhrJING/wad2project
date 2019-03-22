@@ -1,0 +1,61 @@
+{% extends 'WATCHERS/base.html' %}
+
+{% load staticfiles %}
+{% load ratings %}
+{% load disqus_tags %}
+{% disqus_dev %}
+
+{% block title %}
+    <title>{{ podcast.title }}</title>
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/podcast.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+        <div class="profileimg">
+            <img src="{{podcast.image.url}}"  alt="" class="img-rounded">
+            <div class="stars">
+                {% ratings podcast %}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+      <blockquote>
+        <p class ="font-weight-bold">{{ podcast.title }}</p>
+        <small><cite title="Source Title">{{ podcast.author }}<i class="icon-map-marker"></i></cite></small>
+      </blockquote>
+      <p>
+        <i class="fas fa-home fa-2x"></i>  &emsp;<a href="{{ podcast.url }}">Homepage</a> <br>
+        <i class="fas fa-clock fa-2x"></i>&emsp; ~{{podcast.duration_mins}} mins <br>
+          <i class="fas fa-rss fa-2x"></i>&emsp; <a href="{{podcast.RSS_feed}}">RSS Feed Link</a> <br>
+        <i class="fas fa-dot-circle fa-2x"></i>&emsp; <a href="{% url 'show_category' podcast.category.slug %}"{{podcast.category}}>{{podcast.category}}</a> <br>
+
+      </p>
+    </div>
+
+    <div class="col-md-6">
+        <p class="text-justify font-weight-bold font-italic" style="font-size:200%">
+            {{ podcast.description }}
+        </p>
+    </div>
+
+      <br><br><br>
+
+  </div>
+</div>
+
+<div class="container">
+    <h2>Comments for {{ podcast.title }}:</h2>
+
+    {% disqus_show_comments %}
+</div>
+{% endblock %}

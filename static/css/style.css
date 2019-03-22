@@ -1,0 +1,94 @@
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+/* index */
+.index-header-centered {
+    text-align: center;
+    padding-bottom: 15px;
+}
+.index-intro-info {
+    margin: 30px auto;
+    font-size: 14px;
+    font-style: normal;
+}
+.index-host-info {
+    margin-top: 30px;
+    font-size: 11px;
+    font-style: normal;
+    max-width: 600px;
+}
+
+.navbar-collapse{
+	flex-grow: 0;
+}
+
+.bg-light{
+	border-top: 2px solid #ddd;
+	background-color: #ddd !important;
+}
+.bg-blue{
+    background-color: #3c8dbc !important;
+}
+ul.nav.navbar-nav{
+	width: 100%;
+    display: flex;
+}
+ul.nav.navbar-nav li {
+    width: 33.3%;
+    text-align: center;
+    background: #ddd;
+    padding: 10px 0;
+    font-size: 20px;
+}
+h1{
+	text-align: center;
+    width: 100%;
+    padding: 20px;
+}
+html{
+	overflow-x: hidden;
+}
+.video-list h2{
+	padding:20px 0;
+}
+.form label{
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+.detail .info{
+    padding:20px;
+
+}
+.detail .info .num{
+    border:1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin:0 5px;
+
+}
+.tr{
+    text-align: right;
+}
+.detail .head{
+    float: left;
+    margin-right: 20px;
+}
+.visitors ul{
+    margin:0;
+    padding: 0;
+}
+.visitors li{
+    list-style: none;
+    overflow: hidden;
+    margin:20px 0;
+}
+.visitors li .time{
+    float: right;
+}
+.v-list li{
+    margin-bottom: 20px;
+    list-style: none;
+}
